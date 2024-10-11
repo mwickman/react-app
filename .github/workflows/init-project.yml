@@ -96,10 +96,12 @@ jobs:
           DEBUG: 1
         run: |
           #!/bin/bash
-          test -z "${DEBUG}" || set -o xtrace
+          set -o xtrace
           set -o errexit
 
           cd "$(dirname "$0")"
+          pwd
+          ls
           cd ./github/workflows/cloudzilla
 
           cert=/etc/ssl/certs/ca-certificates.crt
