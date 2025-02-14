@@ -81,7 +81,7 @@ jobs:
           context: .
           push: true
           file: .github/workflows/cloudzilla/Dockerfile
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: mattwtest
           labels: ${{ steps.meta.outputs.labels }}
       - name: Deploy on Section
         env:
