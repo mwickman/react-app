@@ -78,8 +78,6 @@ jobs:
           echo "TEST2=${{ secrets.CZ_BRANCH_test_TEST2 }}" >> .env
           # remove duplicates keeping the items at the bottom of the file
           tac .env | awk -F'=' '!seen[$1]++' | tac > .env.tmp2 && mv .env.tmp2 .env
-          cat .env
-          echo "debug done"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
